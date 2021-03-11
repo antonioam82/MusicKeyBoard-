@@ -15,8 +15,7 @@ class m_keyboard():
         self.duration = IntVar()
         self.duration.set(1000)
 
-        self.durlabel = Label(self.kb,text="DURATION:",bg="gray12",fg="white")
-        self.durlabel.place(x=15,y=10)
+        Label(self.kb,text="DURATION:",bg="gray12",fg="white").place(x=15,y=10)
         self.durEntry = Entry(self.kb,width=8,textvariable=self.duration)
         self.durEntry.place(x=90,y=10)
         self.key1 = Button(self.kb,width=10,height=11,command=lambda:self.init_task(261.63))
