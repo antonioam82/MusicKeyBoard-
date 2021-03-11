@@ -12,7 +12,13 @@ class m_keyboard():
         self.kb.title("Sound Keyboard")
         self.kb.configure(background="gray12")
 
+        self.duration = IntVar()
+        self.duration.set(250)
 
+        self.durlabel = Label(self.kb,text="DURATION:",bg="gray12",fg="white")
+        self.durlabel.place(x=15,y=10)
+        self.durEntry = Entry(self.kb,width=8,textvariable=self.duration)
+        self.durEntry.place(x=90,y=10)
         self.key1 = Button(self.kb,width=10,height=11,command=lambda:self.init_task(261))
         self.key1.place(x=15,y=150)
         self.key2 = Button(self.kb,width=10,height=11,command=lambda:self.init_task(293))
@@ -33,7 +39,7 @@ class m_keyboard():
         self.kb.mainloop()
 
     def make_tone(self):
-        tone = Sine(self.freq).to_audio_segment(duration=2000)
+        tone = Sine(self.freq).to_audio_segment(duration=int(self.durEntry.get()))
         play(tone)
 
     def init_task(self,n):
