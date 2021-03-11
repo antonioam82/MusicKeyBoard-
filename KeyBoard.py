@@ -21,7 +21,7 @@ class m_keyboard():
         Label(self.kb,text="WAVEFORM:",bg="gray12",fg="white").place(x=10,y=40)
         self.durEntry = Entry(self.kb,width=8,textvariable=self.duration,validate="key",validatecommand=(validatecommand, "%S"))
         self.durEntry.place(x=90,y=10)
-        self.waveEntry = ttk.Combobox(self.kb,width=8)
+        self.waveEntry = ttk.Combobox(self.kb,width=8,state='readonly')
         self.waveEntry.place(x=90,y=40)
         self.waveEntry["values"] = self.WaveForms
         self.waveEntry.current(0)
