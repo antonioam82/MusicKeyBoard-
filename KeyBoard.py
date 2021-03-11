@@ -8,7 +8,7 @@ import threading
 class m_keyboard():
     def __init__(self):
         self.kb = Tk()
-        self.kb.geometry("675x325")
+        self.kb.geometry("1163x325")
         self.kb.title("Sound Keyboard")
         self.kb.configure(background="gray12")
 
@@ -39,8 +39,21 @@ class m_keyboard():
         self.key6.place(x=420,y=150)
         self.key7 = Button(self.kb,width=10,height=11,command=lambda:self.init_task(493.88))
         self.key7.place(x=501,y=150)
-        self.key8 = Button(self.kb,width=10,height=11,command=lambda:self.init_task(522))
+        self.key8 = Button(self.kb,width=10,height=11,command=lambda:self.init_task(523.25))
         self.key8.place(x=582,y=150)
+        self.key9 = Button(self.kb,width=10,height=11,command=lambda:self.init_task(587.33))
+        self.key9.place(x=663,y=150)
+        self.key10 = Button(self.kb,width=10,height=11,command=lambda:self.init_task(659.25))
+        self.key10.place(x=744,y=150)
+        self.key11 = Button(self.kb,width=10,height=11,command=lambda:self.init_task(698.45))
+        self.key11.place(x=825,y=150)
+        self.key12 = Button(self.kb,width=10,height=11,command=lambda:self.init_task(783.99))#
+        self.key12.place(x=906,y=150)
+        self.key13 = Button(self.kb,width=10,height=11,command=lambda:self.init_task(880.00))
+        self.key13.place(x=987,y=150)
+        self.key14 = Button(self.kb,width=10,height=11,command=lambda:self.init_task(987.76))
+        self.key14.place(x=1068,y=150)
+
         self.mkey1 = Button(self.kb,width=5,height=6,bg="black",activebackground="light gray",command=lambda:self.init_task(277.18))
         self.mkey1.place(x=72,y=150)
         self.mkey2 = Button(self.kb,width=5,height=6,bg="black",activebackground="light gray",command=lambda:self.init_task(311.13))
@@ -51,6 +64,16 @@ class m_keyboard():
         self.mkey4.place(x=396,y=150)
         self.mkey5 = Button(self.kb,width=5,height=6,bg="black",activebackground="light gray",command=lambda:self.init_task(466.16))
         self.mkey5.place(x=477,y=150)
+        self.mkey6 = Button(self.kb,width=5,height=6,bg="black",activebackground="light gray",command=lambda:self.init_task(554.36))
+        self.mkey6.place(x=639,y=150)
+        self.mkey7 = Button(self.kb,width=5,height=6,bg="black",activebackground="light gray",command=lambda:self.init_task(622.25))
+        self.mkey7.place(x=720,y=150)
+        self.mkey8 = Button(self.kb,width=5,height=6,bg="black",activebackground="light gray",command=lambda:self.init_task(740.00))
+        self.mkey8.place(x=882,y=150)
+        self.mkey9 = Button(self.kb,width=5,height=6,bg="black",activebackground="light gray",command=lambda:self.init_task(830.60))
+        self.mkey9.place(x=963,y=150)
+        self.mkey10 = Button(self.kb,width=5,height=6,bg="black",activebackground="light gray",command=lambda:self.init_task(932.32))
+        self.mkey10.place(x=1044,y=150)
         
         self.kb.mainloop()
 
