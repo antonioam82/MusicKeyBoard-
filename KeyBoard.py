@@ -10,6 +10,7 @@ class m_keyboard():
         self.kb = Tk()
         self.kb.geometry("970x400")
         self.kb.title("Sound Keyboard")
+        self.kb.configure(background="gray12")
 
         self.kb.mainloop()
 
