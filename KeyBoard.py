@@ -15,10 +15,11 @@ class m_keyboard():
         self.duration = IntVar()
         self.duration.set(1000)
         self.WaveForms = ["Sine","Square","Triangle","Sawtooth","Pulse"]
+        validatecommand = self.kb.register(self.valid_duration)
 
         Label(self.kb,text="DURATION:",bg="gray12",fg="white").place(x=15,y=10)
         Label(self.kb,text="WAVEFORM:",bg="gray12",fg="white").place(x=10,y=40)
-        self.durEntry = Entry(self.kb,width=8,textvariable=self.duration)
+        self.durEntry = Entry(self.kb,width=8,textvariable=self.duration,validate="key",validatecommand=(validatecommand, "%S"))
         self.durEntry.place(x=90,y=10)
         self.waveEntry = ttk.Combobox(self.kb,width=8)
         self.waveEntry.place(x=90,y=40)
@@ -66,6 +67,9 @@ class m_keyboard():
             tone = Pulse(self.freq).to_audio_segment(duration=int(self.durEntry.get()))
         play(tone)
 
+    def valid_duration(self,char):
+        return char in "0123456789"
+
     def init_task(self,n):
         self.freq = n
         t = threading.Thread(target=self.make_tone)
@@ -73,3 +77,4 @@ class m_keyboard():
 
 if __name__=="__main__":
     m_keyboard()
+
