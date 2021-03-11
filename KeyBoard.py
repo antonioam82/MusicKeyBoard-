@@ -13,7 +13,7 @@ class m_keyboard():
         self.kb.configure(background="gray12")
 
         self.duration = IntVar()
-        self.duration.set(250)
+        self.duration.set(1000)
 
         self.durlabel = Label(self.kb,text="DURATION:",bg="gray12",fg="white")
         self.durlabel.place(x=15,y=10)
