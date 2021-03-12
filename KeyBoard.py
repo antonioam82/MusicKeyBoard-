@@ -77,28 +77,28 @@ class m_keyboard():
         
         self.kb.mainloop()
 
-    def make_tone(self):
+    def make_tone(self,freq):
         if self.waveEntry.get() == "Sine":
-            tone = Sine(self.freq).to_audio_segment(duration=int(self.durEntry.get()))
+            tone = Sine(freq).to_audio_segment(duration=int(self.durEntry.get()))
         elif self.waveEntry.get() == "Square":
-            tone = Square(self.freq).to_audio_segment(duration=int(self.durEntry.get()))
+            tone = Square(freq).to_audio_segment(duration=int(self.durEntry.get()))
         elif self.waveEntry.get() == "Triangle":
-            tone = Triangle(self.freq).to_audio_segment(duration=int(self.durEntry.get()))
+            tone = Triangle(freq).to_audio_segment(duration=int(self.durEntry.get()))
         elif self.waveEntry.get() == "Sawtooth":
             tone = Sawtooth(self.freq).to_audio_segment(duration=int(self.durEntry.get()))
         elif self.waveEntry.get() == "Pulse":
-            tone = Pulse(self.freq).to_audio_segment(duration=int(self.durEntry.get()))
+            tone = Pulse(freq).to_audio_segment(duration=int(self.durEntry.get()))
         play(tone)
 
     def valid_duration(self,char):
         return char in "0123456789"
 
-    def init_task(self,n):
-        self.freq = n
-        t = threading.Thread(target=self.make_tone)
+    def init_task(self,fr):
+        t = threading.Thread(target=self.make_tone, args=(fr,))
         t.start()
 
 if __name__=="__main__":
     m_keyboard()
+
 
 
