@@ -79,15 +79,15 @@ class m_keyboard():
 
     def make_tone(self,freq):
         if self.waveEntry.get() == "Sine":
-            tone = (Sine(freq).to_audio_segment(duration=int(self.durEntry.get())).fade_out(3))
+            tone = (Sine(freq).to_audio_segment(duration=int(self.durEntry.get())).fade_out(20))
         elif self.waveEntry.get() == "Square":
-            tone = (Square(freq).to_audio_segment(duration=int(self.durEntry.get())).fade_out(3))
+            tone = (Square(freq).to_audio_segment(duration=int(self.durEntry.get())).fade_out(20))
         elif self.waveEntry.get() == "Triangle":
-            tone = (Triangle(freq).to_audio_segment(duration=int(self.durEntry.get())).fade_out(3))
+            tone = (Triangle(freq).to_audio_segment(duration=int(self.durEntry.get())).fade_out(20))
         elif self.waveEntry.get() == "Sawtooth":
-            tone = (Sawtooth(freq).to_audio_segment(duration=int(self.durEntry.get())).fade_out(3))
+            tone = (Sawtooth(freq).to_audio_segment(duration=int(self.durEntry.get())).fade_out(20))
         elif self.waveEntry.get() == "Pulse":
-            tone = (Pulse(freq).to_audio_segment(duration=int(self.durEntry.get())).fade_out(3))
+            tone = (Pulse(freq).to_audio_segment(duration=int(self.durEntry.get())).fade_out(20))
         play(tone)
 
     def valid_duration(self,char):
