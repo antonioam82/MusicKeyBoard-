@@ -85,7 +85,7 @@ class m_keyboard():
         elif self.waveEntry.get() == "Triangle":
             tone = Triangle(freq).to_audio_segment(duration=int(self.durEntry.get()))
         elif self.waveEntry.get() == "Sawtooth":
-            tone = Sawtooth(self.freq).to_audio_segment(duration=int(self.durEntry.get()))
+            tone = Sawtooth(freq).to_audio_segment(duration=int(self.durEntry.get()))
         elif self.waveEntry.get() == "Pulse":
             tone = Pulse(freq).to_audio_segment(duration=int(self.durEntry.get()))
         play(tone)
