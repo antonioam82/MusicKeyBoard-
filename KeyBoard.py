@@ -18,11 +18,11 @@ class m_keyboard():
         validatecommand = self.kb.register(self.valid_duration)
 
         Label(self.kb,text="DURATION:",bg="gray12",fg="white").place(x=15,y=10)
-        Label(self.kb,text="WAVEFORM:",bg="gray12",fg="white").place(x=10,y=40)
+        Label(self.kb,text="WAVEFORM:",bg="gray12",fg="white").place(x=185,y=10)
         self.durEntry = Entry(self.kb,width=8,textvariable=self.duration,validate="key",validatecommand=(validatecommand, "%S"))
         self.durEntry.place(x=90,y=10)
         self.waveEntry = ttk.Combobox(self.kb,width=8,state='readonly')
-        self.waveEntry.place(x=90,y=40)
+        self.waveEntry.place(x=268,y=10)
         self.waveEntry["values"] = self.WaveForms
         self.waveEntry.current(0)
         self.key1 = Button(self.kb,width=10,height=11,command=lambda:self.init_task(261.63))
@@ -100,4 +100,5 @@ class m_keyboard():
 
 if __name__=="__main__":
     m_keyboard()
+
 
