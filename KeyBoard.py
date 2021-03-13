@@ -28,10 +28,10 @@ class m_keyboard():
         self.waveEntry.place(x=268,y=10)
         self.waveEntry["values"] = self.WaveForms
         self.waveEntry.current(0)
-        self.slider = Scale(self.kb,bg="gray12",fg="white",from_=1, to=500)
+        self.slider = Scale(self.kb,bg="gray12",fg="white",from_=1, to=1000)
         self.slider.set(1)
         self.slider.place(x=1095,y=32)
-        self.slider2 = Scale(self.kb,bg="gray12",fg="white",from_=1, to=500)
+        self.slider2 = Scale(self.kb,bg="gray12",fg="white",from_=1, to=1000)
         self.slider2.set(1)
         self.slider2.place(x=1018,y=32)
         self.slider3 = Scale(self.kb,bg="gray12",fg="white",from_=0, to=100)
