@@ -19,12 +19,16 @@ class m_keyboard():
 
         Label(self.kb,text="DURATION:",bg="gray12",fg="white").place(x=15,y=10)
         Label(self.kb,text="WAVEFORM:",bg="gray12",fg="white").place(x=185,y=10)
+        Label(self.kb,text="FADE OUT",bg="gray12",fg="white").place(x=1091,y=10)
         self.durEntry = Entry(self.kb,width=8,textvariable=self.duration,validate="key",validatecommand=(validatecommand, "%S"))
         self.durEntry.place(x=90,y=10)
         self.waveEntry = ttk.Combobox(self.kb,width=9,state='readonly')
         self.waveEntry.place(x=268,y=10)
         self.waveEntry["values"] = self.WaveForms
         self.waveEntry.current(0)
+        self.slider = Scale(self.kb, bg="gray12",fg="white",from_=10, to=1000)
+        self.slider.set(10)
+        self.slider.place(x=1095,y=32)
         self.key1 = Button(self.kb,width=10,height=11,command=lambda:self.init_task(261.63))
         self.key1.place(x=15,y=150)
         self.key2 = Button(self.kb,width=10,height=11,command=lambda:self.init_task(293.66))
@@ -79,15 +83,15 @@ class m_keyboard():
 
     def make_tone(self,freq):
         if self.waveEntry.get() == "Sine":
-            tone = (Sine(freq).to_audio_segment(duration=int(self.durEntry.get())).fade_out(20))
+            tone = (Sine(freq).to_audio_segment(duration=int(self.durEntry.get())).fade_out(self.slider.get()))
         elif self.waveEntry.get() == "Square":
-            tone = (Square(freq).to_audio_segment(duration=int(self.durEntry.get())).fade_out(20))
+            tone = (Square(freq).to_audio_segment(duration=int(self.durEntry.get())).fade_out(self.slider.get()))
         elif self.waveEntry.get() == "Triangle":
-            tone = (Triangle(freq).to_audio_segment(duration=int(self.durEntry.get())).fade_out(20))
+            tone = (Triangle(freq).to_audio_segment(duration=int(self.durEntry.get())).fade_out(self.slider.get()))
         elif self.waveEntry.get() == "Sawtooth":
-            tone = (Sawtooth(freq).to_audio_segment(duration=int(self.durEntry.get())).fade_out(20))
+            tone = (Sawtooth(freq).to_audio_segment(duration=int(self.durEntry.get())).fade_out(self.slider.get()))
         elif self.waveEntry.get() == "Pulse":
-            tone = (Pulse(freq).to_audio_segment(duration=int(self.durEntry.get())).fade_out(20))
+            tone = (Pulse(freq).to_audio_segment(duration=int(self.durEntry.get())).fade_out(self.slider.get()))
         play(tone)
 
     def valid_duration(self,char):
