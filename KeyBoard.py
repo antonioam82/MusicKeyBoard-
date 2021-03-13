@@ -33,6 +33,7 @@ class m_keyboard():
         self.slider2 = Scale(self.kb,bg="gray12",fg="white",from_=1, to=500)
         self.slider2.set(1)
         self.slider2.place(x=1018,y=32)
+        
         self.key1 = Button(self.kb,width=10,height=11,command=lambda:self.init_task(261.63))
         self.key1.place(x=15,y=150)
         self.key2 = Button(self.kb,width=10,height=11,command=lambda:self.init_task(293.66))
@@ -107,5 +108,6 @@ class m_keyboard():
 
 if __name__=="__main__":
     m_keyboard()
+
 
 
