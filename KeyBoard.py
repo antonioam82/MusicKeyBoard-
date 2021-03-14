@@ -34,7 +34,7 @@ class m_keyboard():
         self.slider2 = Scale(self.kb,bg="gray12",fg="white", from_=1, to=500)
         self.slider2.set(1)
         self.slider2.place(x=1018,y=32)
-        self.slider3 = Scale(self.kb,bg="gray12",fg="white",from_=0, to=100)
+        self.slider3 = Scale(self.kb,bg="gray12",fg="white",from_=0, to=20)
         self.slider3.set(1)
         self.slider3.place(x=904,y=32)
         
