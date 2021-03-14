@@ -19,9 +19,9 @@ class m_keyboard():
 
         Label(self.kb,text="DURATION:",bg="gray12",fg="white").place(x=15,y=10)
         Label(self.kb,text="WAVEFORM:",bg="gray12",fg="white").place(x=185,y=10)
-        Label(self.kb,text="FADE OUT",bg="gray12",fg="white").place(x=1091,y=10)
-        Label(self.kb,text="FADE IN",bg="gray12",fg="white").place(x=1014,y=10)
-        Label(self.kb,text="VOLUME",bg="gray12",fg="white").place(x=899,y=10)
+        Label(self.kb,text="FADE OUT",bg="gray12",fg="white").place(x=1088,y=10)
+        Label(self.kb,text="FADE IN",bg="gray12",fg="white").place(x=1015,y=10)
+        Label(self.kb,text="VOLUME",bg="gray12",fg="white").place(x=897,y=10)
         self.durEntry = Entry(self.kb,width=8,textvariable=self.duration,validate="key",validatecommand=(validatecommand, "%S"))
         self.durEntry.place(x=90,y=10)
         self.waveEntry = ttk.Combobox(self.kb,width=9,state='readonly')
