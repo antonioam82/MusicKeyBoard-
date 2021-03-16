@@ -38,8 +38,8 @@ class m_keyboard():
         self.slider3 = Scale(self.kb,bg="gray12",fg="white",from_=100, to=-100)
         self.slider3.set(0)
         self.slider3.place(x=904,y=32)
-        self.slider4 = Scale(self.kb,bg="gray12",fg="white", from_=20, to=1)
-        self.slider4.set(1)
+        self.slider4 = Scale(self.kb,bg="gray12",fg="white", from_=20, to=0)
+        self.slider4.set(0)
         self.slider4.place(x=827,y=32)
         
         self.key1 = Button(self.kb,width=10,height=11,command=lambda:self.init_task(261.63))
