@@ -19,7 +19,7 @@ class m_keyboard():
 
         Label(self.kb,text="DURATION:",bg="gray12",fg="white").place(x=15,y=10)
         Label(self.kb,text="WAVEFORM:",bg="gray12",fg="white").place(x=185,y=10)
-        Label(self.kb,text="FADE OUT",bg="gray12",fg="white").place(x=1088,y=10)
+        Label(self.kb,text="FADE OUT",bg="gray12",fg="white").place(x=1094,y=10)
         Label(self.kb,text="FADE IN",bg="gray12",fg="white").place(x=1015,y=10)
         Label(self.kb,text="GAIN",bg="gray12",fg="white").place(x=911,y=10)
         Label(self.kb,text="VOLUME",bg="gray12",fg="white").place(x=820,y=10)
@@ -31,7 +31,7 @@ class m_keyboard():
         self.waveEntry.current(0)
         self.slider = Scale(self.kb,bg="gray12",fg="white",from_=500, to=1)
         self.slider.set(1)
-        self.slider.place(x=1095,y=32)
+        self.slider.place(x=1102,y=32)
         self.slider2 = Scale(self.kb,bg="gray12",fg="white", from_=500, to=1)
         self.slider2.set(1)
         self.slider2.place(x=1018,y=32)
