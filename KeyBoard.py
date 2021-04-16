@@ -1,6 +1,6 @@
 from tkinter import *
 from tkinter import ttk
-from pydub import AudioSegment
+#from pydub import AudioSegment
 from pydub.generators import Sine, Square, Triangle, Sawtooth, Pulse
 from pydub.playback import play
 import threading
@@ -57,6 +57,7 @@ class m_keyboard():
         Button(self.kb,width=10,height=11,command=lambda:self.init_task(880.00)).place(x=987,y=150)
         Button(self.kb,width=10,height=11,command=lambda:self.init_task(987.76)).place(x=1068,y=150)
 
+        #TECLAS NEGRAS.
         Button(self.kb,width=5,height=6,bg="black",activebackground="light gray",command=lambda:self.init_task(277.18)).place(x=72,y=150)
         Button(self.kb,width=5,height=6,bg="black",activebackground="light gray",command=lambda:self.init_task(311.13)).place(x=153,y=150)
         Button(self.kb,width=5,height=6,bg="black",activebackground="light gray",command=lambda:self.init_task(369.99)).place(x=315,y=150)
